@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { X, Coffee, Disc, Clock, Flame, Heart, Play, Pause, Volume2, VolumeX, Sparkles, Check } from 'lucide-react';
-import logoImg from '/logo.webp';
 import { audioManager, COFFEE_TRACKS } from '../../lib/AudioManager';
+
+const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
 
 interface CoffeeModalProps {
   onClose: () => void;
@@ -74,7 +75,18 @@ export const CoffeeModal: React.FC<CoffeeModalProps> = ({ onClose }) => {
         <div className="p-3.5 sm:p-5 border-b border-stone-800 bg-stone-950/70 flex items-center justify-between gap-2 shrink-0">
           <div className="flex items-center gap-2.5 min-w-0 pr-1">
             <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-amber-500/10 border border-amber-500/30 overflow-hidden flex items-center justify-center shrink-0">
-              <img src={logoImg} alt="Логотип" className="w-full h-full object-contain select-none pointer-events-none p-0.5" referrerPolicy="no-referrer" />
+              <img 
+                src={logoImg} 
+                alt="Логотип" 
+                className="w-full h-full object-contain select-none pointer-events-none p-0.5" 
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  if (!e.currentTarget.dataset.fallback) {
+                    e.currentTarget.dataset.fallback = 'true';
+                    e.currentTarget.src = './logo.webp';
+                  }
+                }}
+              />
             </div>
             <div className="min-w-0">
               <h2 className="text-sm sm:text-base font-semibold font-sans-ui text-stone-100 truncate">Кофейная пауза • Режим работы</h2>

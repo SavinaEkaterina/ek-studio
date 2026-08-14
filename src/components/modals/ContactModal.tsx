@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Mail, Copy, Check, MessageCircle, Send, Globe } from 'lucide-react';
-import logoImg from '/logo.webp';
+
+const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
 
 interface ContactModalProps {
   onClose: () => void;
@@ -45,7 +46,18 @@ export const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
         {/* Smartphone Screen Styled Container */}
         <div className="p-6 border-b border-stone-800 bg-gradient-to-b from-stone-900 via-stone-950 to-[#121215] text-center space-y-3">
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-amber-500/10 border-2 border-amber-500/40 mx-auto flex items-center justify-center shadow-lg overflow-hidden shrink-0">
-            <img src={logoImg} alt="Логотип" className="w-full h-full object-contain rounded-2xl select-none pointer-events-none p-1" referrerPolicy="no-referrer" />
+            <img 
+              src={logoImg} 
+              alt="Логотип" 
+              className="w-full h-full object-contain rounded-2xl select-none pointer-events-none p-1" 
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                if (!e.currentTarget.dataset.fallback) {
+                  e.currentTarget.dataset.fallback = 'true';
+                  e.currentTarget.src = './logo.webp';
+                }
+              }}
+            />
           </div>
 
           <div>

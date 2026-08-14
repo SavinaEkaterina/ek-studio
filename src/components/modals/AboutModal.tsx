@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, Sparkles, User, Award, Layers, Heart, Palette, Code, CheckCircle2, Send, Mail } from 'lucide-react';
-import logoImg from '/logo.webp';
+
+const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
 
 interface AboutModalProps {
   onClose: () => void;
@@ -39,7 +40,18 @@ export const AboutModal: React.FC<AboutModalProps> = ({ onClose, onOpenPortfolio
         <div className="p-5 sm:p-6 border-b border-stone-800/80 flex items-center justify-between bg-stone-950/70 shrink-0">
           <div className="flex items-center gap-3.5">
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 overflow-hidden flex items-center justify-center p-1 shrink-0 shadow-inner">
-              <img src={logoImg} alt="Екатерина Савина" className="w-full h-full object-contain select-none pointer-events-none" referrerPolicy="no-referrer" />
+              <img 
+                src={logoImg} 
+                alt="Екатерина Савина" 
+                className="w-full h-full object-contain select-none pointer-events-none" 
+                referrerPolicy="no-referrer" 
+                onError={(e) => {
+                  if (!e.currentTarget.dataset.fallback) {
+                    e.currentTarget.dataset.fallback = 'true';
+                    e.currentTarget.src = './logo.webp';
+                  }
+                }}
+              />
             </div>
             <div>
               <div className="flex items-center gap-2">

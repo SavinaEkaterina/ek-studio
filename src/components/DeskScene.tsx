@@ -20,7 +20,8 @@ import { AboutModal } from './modals/AboutModal';
 import { BackgroundMusic } from './BackgroundMusic';
 
 import { Sparkles, Compass, Eye, Sun, Moon } from 'lucide-react';
-import logoImg from '/logo.webp';
+
+const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
 
 // Pre-generated static particle config to avoid re-creation on render
 const STATIC_PARTICLES = [...Array(24)].map((_, i) => ({
@@ -118,13 +119,13 @@ export const DeskScene: React.FC = () => {
         <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0 pr-2">
           <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 overflow-hidden flex items-center justify-center shadow-md shrink-0 transition-all duration-300">
             <img 
-              src={logoImg || `${import.meta.env.BASE_URL}logo.webp`} 
+              src={logoImg} 
               alt="Екатерина Савина - Логотип" 
               referrerPolicy="no-referrer"
               onError={(e) => {
                 if (!e.currentTarget.dataset.fallback) {
                   e.currentTarget.dataset.fallback = 'true';
-                  e.currentTarget.src = `${import.meta.env.BASE_URL}logo.webp`;
+                  e.currentTarget.src = './logo.webp';
                 }
               }}
               className="w-full h-full object-contain select-none pointer-events-none p-0.5" 

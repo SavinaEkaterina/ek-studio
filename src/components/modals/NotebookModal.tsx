@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, Sparkles } from 'lucide-react';
-import logoImg from '/logo.webp';
+
+const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
 
 interface NotebookModalProps {
   onClose: () => void;
@@ -36,7 +37,18 @@ export const NotebookModal: React.FC<NotebookModalProps> = ({ onClose }) => {
         <div className="p-5 sm:p-6 border-b border-stone-800 flex items-center justify-between bg-stone-950/60">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 overflow-hidden flex items-center justify-center shrink-0">
-              <img src={logoImg} alt="Логотип" className="w-full h-full object-contain select-none pointer-events-none p-0.5" referrerPolicy="no-referrer" />
+              <img 
+                src={logoImg} 
+                alt="Логотип" 
+                className="w-full h-full object-contain select-none pointer-events-none p-0.5" 
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  if (!e.currentTarget.dataset.fallback) {
+                    e.currentTarget.dataset.fallback = 'true';
+                    e.currentTarget.src = './logo.webp';
+                  }
+                }}
+              />
             </div>
             <div>
               <h2 className="text-base font-semibold font-sans-ui text-stone-100">Moleskine • Наша философия</h2>
