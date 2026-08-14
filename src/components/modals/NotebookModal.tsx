@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, Sparkles } from 'lucide-react';
-import logoImg from '../../assets/Portfolio/03_Assets/logo/logo.webp';
+import logoImg from '/logo.webp';
 
 interface NotebookModalProps {
   onClose: () => void;

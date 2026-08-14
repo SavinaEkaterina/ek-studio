@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Mail, Copy, Check, MessageCircle, Send, Globe } from 'lucide-react';
-import logoImg from '../../assets/Portfolio/03_Assets/logo/logo.webp';
+import logoImg from '/logo.webp';
 
 interface ContactModalProps {
   onClose: () => void;

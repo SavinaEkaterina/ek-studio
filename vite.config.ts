@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-base: '/ek-studio/',
+    base: process.env.VITE_BASE || '/ek-studio/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

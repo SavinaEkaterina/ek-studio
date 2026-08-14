@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, ExternalLink, Sparkles, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Project } from '../../types';
-import logoImg from '../../assets/Portfolio/03_Assets/logo/logo.webp';
+import logoImg from '/logo.webp';
 
 interface PortfolioModalProps {
   onClose: () => void;

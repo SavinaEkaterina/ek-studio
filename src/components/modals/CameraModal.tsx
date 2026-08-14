@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Image, ZoomIn } from 'lucide-react';
-import logoImg from '../../assets/Portfolio/03_Assets/logo/logo.webp';
+import logoImg from '/logo.webp';
 import frontCoverImg from '../../assets/Portfolio/03_Assets/Camera/front-cover.webp';
 import chapter19Img from '../../assets/Portfolio/03_Assets/Camera/chapter-01-page-19.webp';
 import colorizationImg from '../../assets/Portfolio/03_Assets/Camera/colorization-after.webp';

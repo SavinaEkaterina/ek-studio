@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, Sparkles, User, Award, Layers, Heart, Palette, Code, CheckCircle2, Send, Mail } from 'lucide-react';
-import logoImg from '../../assets/Portfolio/03_Assets/logo/logo.webp';
+import logoImg from '/logo.webp';
 
 interface AboutModalProps {
   onClose: () => void;

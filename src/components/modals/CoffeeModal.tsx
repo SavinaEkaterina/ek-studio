@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Coffee, Disc, Clock, Flame, Heart, Play, Pause, Volume2, VolumeX, Sparkles, Check } from 'lucide-react';
-import logoImg from '../../assets/Portfolio/03_Assets/logo/logo.webp';
+import logoImg from '/logo.webp';
 import { audioManager, COFFEE_TRACKS } from '../../lib/AudioManager';
 
 interface CoffeeModalProps {
