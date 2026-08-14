@@ -1,0 +1,6 @@
+{
+  "name": "Creative Desk Workspace",
+  "description": "An interactive photorealistic creative desk workspace portfolio experience",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
