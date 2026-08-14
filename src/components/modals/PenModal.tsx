@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, Lightbulb, PenTool } from 'lucide-react';
 
-const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
+const logoImg = `${import.meta.env.BASE_URL}logo.png`;
 
 interface PenModalProps {
   onClose: () => void;
@@ -45,7 +45,7 @@ export const PenModal: React.FC<PenModalProps> = ({ onClose }) => {
                 onError={(e) => {
                   if (!e.currentTarget.dataset.fallback) {
                     e.currentTarget.dataset.fallback = 'true';
-                    e.currentTarget.src = './logo.webp';
+                    e.currentTarget.src = './logo.png';
                   }
                 }}
               />

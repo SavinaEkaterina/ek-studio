@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Coffee, Disc, Clock, Flame, Heart, Play, Pause, Volume2, VolumeX, Sparkles, Check } from 'lucide-react';
 import { audioManager, COFFEE_TRACKS } from '../../lib/AudioManager';
 
-const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
+const logoImg = `${import.meta.env.BASE_URL}logo.png`;
 
 interface CoffeeModalProps {
   onClose: () => void;
@@ -83,7 +83,7 @@ export const CoffeeModal: React.FC<CoffeeModalProps> = ({ onClose }) => {
                 onError={(e) => {
                   if (!e.currentTarget.dataset.fallback) {
                     e.currentTarget.dataset.fallback = 'true';
-                    e.currentTarget.src = './logo.webp';
+                    e.currentTarget.src = './logo.png';
                   }
                 }}
               />

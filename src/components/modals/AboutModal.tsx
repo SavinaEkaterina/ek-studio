@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, Sparkles, User, Award, Layers, Heart, Palette, Code, CheckCircle2, Send, Mail } from 'lucide-react';
 
-const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
+const logoImg = `${import.meta.env.BASE_URL}logo.png`;
 
 interface AboutModalProps {
   onClose: () => void;
@@ -48,7 +48,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ onClose, onOpenPortfolio
                 onError={(e) => {
                   if (!e.currentTarget.dataset.fallback) {
                     e.currentTarget.dataset.fallback = 'true';
-                    e.currentTarget.src = './logo.webp';
+                    e.currentTarget.src = './logo.png';
                   }
                 }}
               />

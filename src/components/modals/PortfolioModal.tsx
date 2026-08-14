@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, ExternalLink, Sparkles, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Project } from '../../types';
 
-const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
+const logoImg = `${import.meta.env.BASE_URL}logo.png`;
 
 interface PortfolioModalProps {
   onClose: () => void;
@@ -87,7 +87,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
                 onError={(e) => {
                   if (!e.currentTarget.dataset.fallback) {
                     e.currentTarget.dataset.fallback = 'true';
-                    e.currentTarget.src = './logo.webp';
+                    e.currentTarget.src = './logo.png';
                   }
                 }}
               />

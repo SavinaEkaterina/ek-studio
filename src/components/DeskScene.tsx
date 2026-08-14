@@ -21,7 +21,7 @@ import { BackgroundMusic } from './BackgroundMusic';
 
 import { Sparkles, Compass, Eye, Sun, Moon } from 'lucide-react';
 
-const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
+const logoImg = `${import.meta.env.BASE_URL}logo.png`;
 
 // Pre-generated static particle config to avoid re-creation on render
 const STATIC_PARTICLES = [...Array(24)].map((_, i) => ({
@@ -125,7 +125,7 @@ export const DeskScene: React.FC = () => {
               onError={(e) => {
                 if (!e.currentTarget.dataset.fallback) {
                   e.currentTarget.dataset.fallback = 'true';
-                  e.currentTarget.src = './logo.webp';
+                  e.currentTarget.src = './logo.png';
                 }
               }}
               className="w-full h-full object-contain select-none pointer-events-none p-0.5" 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Mail, Copy, Check, MessageCircle, Send, Globe } from 'lucide-react';
 
-const logoImg = `${import.meta.env.BASE_URL}logo.webp`;
+const logoImg = `${import.meta.env.BASE_URL}logo.png`;
 
 interface ContactModalProps {
   onClose: () => void;
@@ -54,7 +54,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
               onError={(e) => {
                 if (!e.currentTarget.dataset.fallback) {
                   e.currentTarget.dataset.fallback = 'true';
-                  e.currentTarget.src = './logo.webp';
+                  e.currentTarget.src = './logo.png';
                 }
               }}
             />
