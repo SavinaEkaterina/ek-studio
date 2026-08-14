@@ -19,14 +19,8 @@ export const PenItem: React.FC<PenItemProps> = memo(({ onHover, onClick, classNa
     >
       {/* Pen Image Asset */}
       <img
-        src={penImg || '/Portfolio/03_Assets/Pen/pen.webp'}
+        src={penImg}
         alt="Ручка"
-        onError={(e) => {
-          if (!e.currentTarget.dataset.fallback) {
-            e.currentTarget.dataset.fallback = 'true';
-            e.currentTarget.src = '/Portfolio/03_Assets/Pen/pen.webp';
-          }
-        }}
         className="relative w-full h-full object-contain pointer-events-none select-none cursor-pointer"
         loading="eager"
         decoding="async"

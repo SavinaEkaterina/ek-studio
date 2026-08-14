@@ -19,14 +19,8 @@ export const NotebookItem: React.FC<NotebookItemProps> = memo(({ onHover, onClic
     >
       {/* Notebook Image Asset */}
       <img
-        src={notebookImg || '/Portfolio/03_Assets/Notebook/OpenNotes.webp'}
+        src={notebookImg}
         alt="Блокнот"
-        onError={(e) => {
-          if (!e.currentTarget.dataset.fallback) {
-            e.currentTarget.dataset.fallback = 'true';
-            e.currentTarget.src = '/Portfolio/03_Assets/Notebook/OpenNotes.webp';
-          }
-        }}
         className="relative w-full h-full object-contain pointer-events-none select-none cursor-pointer"
         loading="eager"
         decoding="async"

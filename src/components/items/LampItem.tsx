@@ -20,14 +20,8 @@ export const LampItem: React.FC<LampItemProps> = memo(({ onHover, onClick, lampO
     >
       {/* Lamp Image Asset */}
       <img
-        src={lampImg || '/Portfolio/03_Assets/Lamp/lamp.webp'}
+        src={lampImg}
         alt="Лампа"
-        onError={(e) => {
-          if (!e.currentTarget.dataset.fallback) {
-            e.currentTarget.dataset.fallback = 'true';
-            e.currentTarget.src = '/Portfolio/03_Assets/Lamp/lamp.webp';
-          }
-        }}
         className="relative w-full h-full object-contain pointer-events-none select-none cursor-pointer"
         loading="eager"
         decoding="async"

@@ -28,14 +28,8 @@ export const MugItem: React.FC<MugItemProps> = memo(({ onHover, onClick, classNa
 
       {/* Coffee Mug WebP Image Asset */}
       <img
-        src={coffeeImg || '/Portfolio/03_Assets/Coffee/coffee.webp'}
+        src={coffeeImg}
         alt="Кружка кофе"
-        onError={(e) => {
-          if (!e.currentTarget.dataset.fallback) {
-            e.currentTarget.dataset.fallback = 'true';
-            e.currentTarget.src = '/Portfolio/03_Assets/Coffee/coffee.webp';
-          }
-        }}
         className="relative w-full h-full object-contain pointer-events-none select-none cursor-pointer transition-all duration-300"
         loading="eager"
         decoding="async"

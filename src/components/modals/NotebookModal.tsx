@@ -42,12 +42,6 @@ export const NotebookModal: React.FC<NotebookModalProps> = ({ onClose }) => {
                 alt="Логотип" 
                 className="w-full h-full object-contain select-none pointer-events-none p-0.5" 
                 referrerPolicy="no-referrer"
-                onError={(e) => {
-                  if (!e.currentTarget.dataset.fallback) {
-                    e.currentTarget.dataset.fallback = 'true';
-                    e.currentTarget.src = './logo.png';
-                  }
-                }}
               />
             </div>
             <div>
