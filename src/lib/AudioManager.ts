@@ -10,12 +10,25 @@ export interface CoffeeTrackInfo {
   notes: number[];
 }
 
+export interface CoffeeTrackInfo {
+  id: string;
+  title: string;
+  artist: string;
+  fileCandidates: [`${BASE_URL}track1.mp3`, `${BASE_URL}track1`],
+  isMain?: boolean;
+  notes: number[];
+}
+
+const BASE_URL = import.meta.env.BASE_URL;
+
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const COFFEE_TRACKS: CoffeeTrackInfo[] = [
   {
     id: 'track-1',
     title: 'Трек 1 • Кофейная пауза',
     artist: 'public/track1.mp3',
-    fileCandidates: ['/track1.mp3', '/track1'],
+    fileCandidates: [`${BASE_URL}track2.mp3`, `${BASE_URL}track2`],
     isMain: true,
     notes: [130.81, 164.81, 196.00, 246.94],
   },
@@ -31,7 +44,7 @@ export const COFFEE_TRACKS: CoffeeTrackInfo[] = [
     id: 'track-3',
     title: 'Трек 3 • Глубокая Концентрация',
     artist: 'Synthesized Chill Ambient',
-    fileCandidates: ['/track1.mp3', '/track2.mp3'], // Fallback gracefully if separate file absent
+  const BG_CANDIDATES = [`${BASE_URL}music.mp3`, `${BASE_URL}music`];
     isMain: false,
     notes: [110.00, 164.81, 220.00, 277.18],
   },
