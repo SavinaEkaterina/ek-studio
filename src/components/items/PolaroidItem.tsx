@@ -19,8 +19,14 @@ export const PolaroidItem: React.FC<PolaroidItemProps> = memo(({ onHover, onClic
     >
       {/* Polaroid WebP Image Asset */}
       <img
-        src={polaroidImg}
+        src={polaroidImg || '/Portfolio/03_Assets/Polaroid/Polaroid.webp'}
         alt="Снимок Polaroid • Екатерина Савина"
+        onError={(e) => {
+          if (!e.currentTarget.dataset.fallback) {
+            e.currentTarget.dataset.fallback = 'true';
+            e.currentTarget.src = '/Portfolio/03_Assets/Polaroid/Polaroid.webp';
+          }
+        }}
         className="relative w-full h-full object-contain pointer-events-none select-none cursor-pointer transition-all duration-300"
         loading="eager"
         decoding="async"

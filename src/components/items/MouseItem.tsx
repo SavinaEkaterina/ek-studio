@@ -19,8 +19,14 @@ export const MouseItem: React.FC<MouseItemProps> = memo(({ onHover, onClick, cla
     >
       {/* Mouse Image Asset */}
       <img
-        src={mouseImg}
+        src={mouseImg || '/Portfolio/03_Assets/Mouse/Mouse.webp'}
         alt="Беспроводная мышь"
+        onError={(e) => {
+          if (!e.currentTarget.dataset.fallback) {
+            e.currentTarget.dataset.fallback = 'true';
+            e.currentTarget.src = '/Portfolio/03_Assets/Mouse/Mouse.webp';
+          }
+        }}
         className="relative w-full h-full object-contain pointer-events-none select-none cursor-pointer transition-all duration-300"
         loading="eager"
         decoding="async"

@@ -19,8 +19,14 @@ export const LaptopItem: React.FC<LaptopItemProps> = memo(({ onHover, onClick, c
     >
       {/* Laptop Image Asset */}
       <img
-        src={laptopImg}
+        src={laptopImg || '/Portfolio/03_Assets/Laptop/laptop.webp'}
         alt="Ноутбук"
+        onError={(e) => {
+          if (!e.currentTarget.dataset.fallback) {
+            e.currentTarget.dataset.fallback = 'true';
+            e.currentTarget.src = '/Portfolio/03_Assets/Laptop/laptop.webp';
+          }
+        }}
         className="relative w-full h-full object-contain pointer-events-none select-none cursor-pointer"
         loading="eager"
         decoding="async"

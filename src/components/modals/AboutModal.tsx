@@ -44,7 +44,13 @@ export const AboutModal: React.FC<AboutModalProps> = ({ onClose, onOpenPortfolio
                 src={logoImg} 
                 alt="Екатерина Савина" 
                 className="w-full h-full object-contain select-none pointer-events-none" 
-                referrerPolicy="no-referrer"
+                referrerPolicy="no-referrer" 
+                onError={(e) => {
+                  if (!e.currentTarget.dataset.fallback) {
+                    e.currentTarget.dataset.fallback = 'true';
+                    e.currentTarget.src = './logo.png';
+                  }
+                }}
               />
             </div>
             <div>

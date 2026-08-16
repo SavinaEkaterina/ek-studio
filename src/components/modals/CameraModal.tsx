@@ -121,6 +121,12 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
                 alt="Логотип" 
                 className="w-full h-full object-contain select-none pointer-events-none p-0.5" 
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  if (!e.currentTarget.dataset.fallback) {
+                    e.currentTarget.dataset.fallback = 'true';
+                    e.currentTarget.src = './logo.png';
+                  }
+                }}
               />
             </div>
             <div>
@@ -155,7 +161,7 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
                   <img
                     src={shot.thumbUrl}
                     alt={shot.title}
-                    loading="lazy"
+                    loading="eager"
                     decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />

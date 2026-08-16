@@ -19,8 +19,14 @@ export const CameraItem: React.FC<CameraItemProps> = memo(({ onHover, onClick, c
     >
       {/* Camera Image Asset */}
       <img
-        src={cameraImg}
+        src={cameraImg || '/Portfolio/03_Assets/Camera/Top.webp'}
         alt="Фотоаппарат"
+        onError={(e) => {
+          if (!e.currentTarget.dataset.fallback) {
+            e.currentTarget.dataset.fallback = 'true';
+            e.currentTarget.src = '/Portfolio/03_Assets/Camera/Top.webp';
+          }
+        }}
         className="relative w-full h-full object-contain pointer-events-none select-none cursor-pointer"
         loading="eager"
         decoding="async"

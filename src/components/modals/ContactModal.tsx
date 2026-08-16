@@ -51,6 +51,12 @@ export const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
               alt="Логотип" 
               className="w-full h-full object-contain rounded-2xl select-none pointer-events-none p-1" 
               referrerPolicy="no-referrer"
+              onError={(e) => {
+                if (!e.currentTarget.dataset.fallback) {
+                  e.currentTarget.dataset.fallback = 'true';
+                  e.currentTarget.src = './logo.png';
+                }
+              }}
             />
           </div>
 

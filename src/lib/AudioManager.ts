@@ -10,16 +10,12 @@ export interface CoffeeTrackInfo {
   notes: number[];
 }
 
-const baseUrl = import.meta.env.BASE_URL.endsWith('/')
-  ? import.meta.env.BASE_URL
-  : import.meta.env.BASE_URL + '/';
-
 export const COFFEE_TRACKS: CoffeeTrackInfo[] = [
   {
     id: 'track-1',
     title: 'Трек 1 • Кофейная пауза',
     artist: 'public/track1.mp3',
-    fileCandidates: [`${baseUrl}track1.mp3`],
+    fileCandidates: ['/track1.mp3', '/track1'],
     isMain: true,
     notes: [130.81, 164.81, 196.00, 246.94],
   },
@@ -27,7 +23,7 @@ export const COFFEE_TRACKS: CoffeeTrackInfo[] = [
     id: 'track-2',
     title: 'Трек 2 • Уютный Дзэн',
     artist: 'public/track2.mp3',
-    fileCandidates: [`${baseUrl}track2.mp3`],
+    fileCandidates: ['/track2.mp3', '/track2'],
     isMain: false,
     notes: [174.61, 220.00, 261.63, 329.63],
   },
@@ -35,7 +31,7 @@ export const COFFEE_TRACKS: CoffeeTrackInfo[] = [
     id: 'track-3',
     title: 'Трек 3 • Глубокая Концентрация',
     artist: 'Synthesized Chill Ambient',
-    fileCandidates: [`${baseUrl}track1.mp3`, `${baseUrl}track2.mp3`], // Fallback gracefully if separate file absent
+    fileCandidates: ['/track1.mp3', '/track2.mp3'], // Fallback gracefully if separate file absent
     isMain: false,
     notes: [110.00, 164.81, 220.00, 277.18],
   },
@@ -43,13 +39,13 @@ export const COFFEE_TRACKS: CoffeeTrackInfo[] = [
     id: 'track-4',
     title: 'Трек 4 • Атмосферный Эмбиент',
     artist: 'Synthesized Warm Ambient',
-    fileCandidates: [`${baseUrl}track2.mp3`, `${baseUrl}track1.mp3`], // Fallback gracefully
+    fileCandidates: ['/track2.mp3', '/track1.mp3'], // Fallback gracefully
     isMain: false,
     notes: [146.83, 185.00, 220.00, 293.66],
   },
 ];
 
-const BG_CANDIDATES = [`${baseUrl}music.mp3`];
+const BG_CANDIDATES = ['/music.mp3', '/music'];
 
 class SafeAudioPlayer {
   private audio: HTMLAudioElement | null = null;

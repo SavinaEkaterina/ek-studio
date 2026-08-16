@@ -42,6 +42,12 @@ export const PenModal: React.FC<PenModalProps> = ({ onClose }) => {
                 alt="Логотип" 
                 className="w-full h-full object-contain select-none pointer-events-none p-0.5" 
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  if (!e.currentTarget.dataset.fallback) {
+                    e.currentTarget.dataset.fallback = 'true';
+                    e.currentTarget.src = './logo.png';
+                  }
+                }}
               />
             </div>
             <div>

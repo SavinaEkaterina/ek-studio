@@ -19,8 +19,14 @@ export const SmartphoneItem: React.FC<SmartphoneItemProps> = memo(({ onHover, on
     >
       {/* Smartphone Image Asset */}
       <img
-        src={smartphoneImg}
+        src={smartphoneImg || '/Portfolio/03_Assets/Smartphone/Smartphone.webp'}
         alt="Смартфон"
+        onError={(e) => {
+          if (!e.currentTarget.dataset.fallback) {
+            e.currentTarget.dataset.fallback = 'true';
+            e.currentTarget.src = '/Portfolio/03_Assets/Smartphone/Smartphone.webp';
+          }
+        }}
         className="relative w-full h-full object-contain pointer-events-none select-none cursor-pointer transition-all duration-300"
         loading="eager"
         decoding="async"
