@@ -39,7 +39,7 @@ const PROJECTS: Project[] = [
     ],
     metrics: 'Архивная эстетика • Google AI Studio',
     client: 'Реставрационная мастерская',
-    linkUrl: 'https://hranitelipamayti.ai.studio',
+    linkUrl: 'https://savinaekaterina.github.io/hranitelipamayti',
     imageBg: 'from-stone-900 via-amber-950/60 to-stone-950',
     accentColor: '#d97706',
   },
