@@ -7,6 +7,8 @@ import chapter19Img from '../../assets/Portfolio/03_Assets/Camera/chapter-01-pag
 import colorizationImg from '../../assets/Portfolio/03_Assets/Camera/colorization-after.webp';
 import jubileeImg from '../../assets/Portfolio/03_Assets/Camera/jubilee-03.webp';
 import piterVideo from '../../assets/Portfolio/03_Assets/Прогулка_по_Петербургу_для_портфолио.mp4';
+import resnicLogoImg from '../../../assets/Portfolio/03_Assets/arhitektura-resnic-logo.png';
+import flyerImg from '../../../assets/Portfolio/03_Assets/flyer-akciya-dzhinsy.png';
 
 interface CameraModalProps {
   onClose: () => void;
@@ -39,27 +41,27 @@ const GALLERY_SHOTS: ShotItem[] = [
   videoUrl: piterVideo,
 },
   {
-    id: 2,
-    title: '«Падающие перья и лунное сияние»',
-    category: 'Book Illustration (p. 19)',
-    desc: 'Полностраничный арт из первой главы: волшебная ночная панорама с луной, северным сиянием и пером.',
-    author: 'Екатерина Савина',
-    color: 'from-sky-950/90 via-indigo-950/80 to-stone-900',
-    exif: 'Chapter 01 • Page 19',
-    thumbUrl: chapter19Img,
-    imageUrl: chapter19Img,
-  },
-  {
-    id: 3,
-    title: '«Художественная колоризация»',
-    category: 'Digital Restoration & Color',
-    desc: 'Пример реставрации и глубокой художественной колоризации архивных фотографических материалов.',
-    author: 'Екатерина Савина',
-    color: 'from-stone-900 via-amber-950/40 to-stone-950',
-    exif: 'Colorization After • 35mm',
-    thumbUrl: colorizationImg,
-    imageUrl: colorizationImg,
-  },
+  id: 2,
+  title: '«Архитектура ресниц»',
+  category: 'Logo Design • Branding',
+  desc: 'Авторский логотип для мастера в сфере красоты. В основе айдентики — графичный образ металлической бабочки, объединённый со строгой типографикой и рукописным начертанием имени.',
+  author: 'Екатерина Савина',
+  color: 'from-stone-950/90 via-neutral-900 to-stone-950',
+  exif: 'Логотип • Айдентика • Beauty',
+  thumbUrl: resnicLogoImg,
+  imageUrl: resnicLogoImg,
+},
+ {
+  id: 3,
+  title: '«Флаер для рекламной акции»',
+  category: 'Graphic Design • Advertising',
+  desc: 'Рекламный флаер для повторной акции магазина джинсовой одежды. Задача — сохранить визуальную концепцию первоначального промоматериала и адаптировать её для новой рекламной кампании с актуальными датами.',
+  author: 'Екатерина Савина',
+  color: 'from-blue-950/90 via-slate-900 to-stone-950',
+  exif: 'Рекламный флаер • Digital Design',
+  thumbUrl: flyerImg,
+  imageUrl: flyerImg,
+},
   {
     id: 4,
     title: '«Юбилейный спецпроект»',
