@@ -102,17 +102,7 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
     };
 
     window.addEventListener('keydown', handleKeyDown);
-
-    // Preload full high-res images in background safely
-    const images: HTMLImageElement[] = [];
-   GALLERY_SHOTS.forEach((shot) => {
-  if (shot.type !== 'video' && shot.imageUrl) {
-    const img = new window.Image();
-    img.src = shot.imageUrl;
-    images.push(img);
-  }
-});
-
+    
     return () => {
       document.body.style.overflow = originalOverflow;
       window.removeEventListener('keydown', handleKeyDown);
@@ -187,7 +177,7 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
     <img
       src={shot.thumbUrl}
       alt={shot.title}
-      loading="eager"
+      loading="lazy"
       decoding="async"
       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
     />
