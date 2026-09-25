@@ -240,7 +240,7 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
             </button>
 
             {/* Lightbox Header */}
-           <div className="w-full max-h-[60vh] rounded-xl overflow-hidden border border-stone-800 bg-black/60 flex items-center justify-center my-2 shadow-2xl">
+           <div className="w-full max-h-[70vh] rounded-xl overflow-y-auto border border-stone-800 bg-black/60 flex flex-col items-center justify-start my-2 shadow-2xl">
  {selectedShot.type === 'video' && selectedShot.videoUrl ? (
   <video
     src={selectedShot.videoUrl}
