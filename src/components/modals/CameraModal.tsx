@@ -7,8 +7,8 @@ import chapter19Img from '../../assets/Portfolio/03_Assets/Camera/chapter-01-pag
 import colorizationImg from '../../assets/Portfolio/03_Assets/Camera/colorization-after.webp';
 import jubileeImg from '../../assets/Portfolio/03_Assets/Camera/jubilee-03.webp';
 import piterVideo from '../../assets/Portfolio/03_Assets/Прогулка_по_Петербургу_для_портфолио.mp4';
-import resnicLogoImg from '../../../assets/Portfolio/03_Assets/arhitektura-resnic-logo.png';
-import flyerImg from '../../../assets/Portfolio/03_Assets/flyer-akciya-dzhinsy.png';
+import resnicLogoImg from '../../assets/Portfolio/03_Assets/arhitektura-resnic-logo.png';
+import flyerImg from '../../assets/Portfolio/03_Assets/flyer-akciya-dzhinsy.png';
 
 interface CameraModalProps {
   onClose: () => void;
