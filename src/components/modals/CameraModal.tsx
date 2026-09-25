@@ -9,6 +9,9 @@ import jubileeImg from '../../assets/Portfolio/03_Assets/Camera/jubilee-03.webp'
 import piterVideo from '../../assets/Portfolio/03_Assets/Прогулка_по_Петербургу_для_портфолио.mp4';
 import resnicLogoImg from '../../assets/Portfolio/03_Assets/arhitektura-resnic-logo.png';
 import flyerImg from '../../assets/Portfolio/03_Assets/flyer-akciya-dzhinsy.png';
+import denVospitatelyaCoverImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-cover.png';
+import denVospitatelyaPersonalImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-personal.png';
+import denVospitatelyaPackagingImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-packaging.png';
 
 interface CameraModalProps {
   onClose: () => void;
@@ -24,6 +27,7 @@ interface ShotItem {
   author?: string;
   thumbUrl?: string;
 imageUrl?: string;
+    galleryImages?: string[];
   type?: 'image' | 'video';
   videoUrl?: string;
 }
@@ -63,16 +67,21 @@ const GALLERY_SHOTS: ShotItem[] = [
   imageUrl: flyerImg,
 },
   {
-    id: 4,
-    title: '«Юбилейный спецпроект»',
-    category: 'Editorial & Art Direction',
-    desc: 'Праздничное арт-оформление и уникальные визуальные материалы для специального печатного издания.',
-    author: 'Екатерина Савина',
-    color: 'from-indigo-950/70 via-stone-900 to-stone-950',
-    exif: 'Jubilee Edition • Shot #03',
-    thumbUrl: jubileeImg,
-    imageUrl: jubileeImg,
-  },
+  id: 4,
+  title: '«Тёплое поздравление ко Дню дошкольного работника»',
+  category: 'Graphic Design • Visual Project',
+  desc: 'Комплексный визуальный проект ко Дню дошкольного работника: персонализированная поздравительная композиция, оформление внутреннего поздравления и упаковки. Задача — создать не просто открытку, а цельный эмоциональный подарок, в котором объединены иллюстрация, типографика, декоративные элементы и персональное обращение.',
+  author: 'Екатерина Савина',
+  color: 'from-rose-950/90 via-amber-950/70 to-stone-950',
+  exif: 'Визуальный проект • Поздравление • Packaging Design',
+  thumbUrl: denVospitatelyaCoverImg,
+  imageUrl: denVospitatelyaCoverImg,
+  galleryImages: [
+    denVospitatelyaCoverImg,
+    denVospitatelyaPersonalImg,
+    denVospitatelyaPackagingImg,
+  ],
+},
 ];
 
 export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
@@ -232,23 +241,36 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
 
             {/* Lightbox Header */}
            <div className="w-full max-h-[60vh] rounded-xl overflow-hidden border border-stone-800 bg-black/60 flex items-center justify-center my-2 shadow-2xl">
-  {selectedShot.type === 'video' && selectedShot.videoUrl ? (
-    <video
-      src={selectedShot.videoUrl}
-      controls
-      autoPlay
-      playsInline
-      className="max-w-full max-h-[60vh] object-contain rounded-lg"
-    />
-  ) : (
-    <img
-      src={selectedShot.imageUrl}
-      alt={selectedShot.title}
-      loading="eager"
-      decoding="async"
-      className="max-w-full max-h-[60vh] object-contain rounded-lg"
-    />
-  )}
+ {selectedShot.type === 'video' && selectedShot.videoUrl ? (
+  <video
+    src={selectedShot.videoUrl}
+    controls
+    autoPlay
+    playsInline
+    className="max-w-full max-h-[60vh] object-contain rounded-lg"
+  />
+) : selectedShot.galleryImages ? (
+  <div className="w-full flex flex-col gap-4">
+    {selectedShot.galleryImages.map((image, index) => (
+      <img
+        key={index}
+        src={image}
+        alt={`${selectedShot.title} — изображение ${index + 1}`}
+        loading="eager"
+        decoding="async"
+        className="w-full max-h-[70vh] object-contain rounded-lg"
+      />
+    ))}
+  </div>
+) : (
+  <img
+    src={selectedShot.imageUrl}
+    alt={selectedShot.title}
+    loading="eager"
+    decoding="async"
+    className="max-w-full max-h-[60vh] object-contain rounded-lg"
+  />
+)}
 </div>
             <p className="text-xs text-stone-300 font-sans-ui max-w-lg mt-3 leading-relaxed">{selectedShot.desc}</p>
           </div>
