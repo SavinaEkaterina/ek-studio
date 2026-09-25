@@ -12,6 +12,7 @@ import flyerImg from '../../assets/Portfolio/03_Assets/flyer-akciya-dzhinsy.png'
 import denVospitatelyaCoverImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-cover.png';
 import denVospitatelyaPersonalImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-personal.png';
 import denVospitatelyaPackagingImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-packaging.png';
+import resnicLogoPreviewImg from '../../assets/Portfolio/03_Assets/arhitektura-resnic-logo-preview.webp';
 
 interface CameraModalProps {
   onClose: () => void;
@@ -52,7 +53,7 @@ const GALLERY_SHOTS: ShotItem[] = [
   author: 'Екатерина Савина',
   color: 'from-stone-950/90 via-neutral-900 to-stone-950',
   exif: 'Логотип • Айдентика • Beauty',
-  thumbUrl: resnicLogoImg,
+  thumbUrl: resnicLogoPreviewImg,
   imageUrl: resnicLogoImg,
 },
  {
