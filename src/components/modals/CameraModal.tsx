@@ -6,6 +6,7 @@ import frontCoverImg from '../../assets/Portfolio/03_Assets/Camera/front-cover.w
 import chapter19Img from '../../assets/Portfolio/03_Assets/Camera/chapter-01-page-19.webp';
 import colorizationImg from '../../assets/Portfolio/03_Assets/Camera/colorization-after.webp';
 import jubileeImg from '../../assets/Portfolio/03_Assets/Camera/jubilee-03.webp';
+import piterVideo from '../../assets/Portfolio/03_Assets/Прогулка_по_Петербургу_для_портфолио.mp4';
 
 interface CameraModalProps {
   onClose: () => void;
@@ -19,22 +20,24 @@ interface ShotItem {
   color: string;
   exif: string;
   author?: string;
-  thumbUrl: string;
-  imageUrl: string;
+  thumbUrl?: string;
+imageUrl?: string;
+  type?: 'image' | 'video';
+  videoUrl?: string;
 }
 
 const GALLERY_SHOTS: ShotItem[] = [
-  {
-    id: 1,
-    title: '«Евдокия • Девочка лунного света»',
-    category: 'Book Cover',
-    desc: 'Авторская обложка книги: сказочная иллюстрация с персонажем Евдокией, белым какаду, щенком и золотой рамкой.',
-    author: 'Екатерина Савина',
-    color: 'from-amber-950/80 via-stone-900 to-stone-950',
-    exif: 'Front Cover • Иллюстрация',
-    thumbUrl: frontCoverImg,
-    imageUrl: frontCoverImg,
-  },
+{
+  id: 1,
+  title: '«Прогулка по Петербургу»',
+  category: 'AI Video • Туристический контент',
+  desc: 'Промо-видео для туроператора, приглашающее отправиться на прогулку по Санкт-Петербургу. В ролике исторический образ Петербурга соединён с современным AI-видеопродакшеном: дворцовые ансамбли, набережные, вода и узнаваемая атмосфера города превращаются в единое визуальное путешествие.',
+  author: 'Екатерина Савина',
+  color: 'from-slate-950/90 via-indigo-950/80 to-stone-900',
+  exif: 'Промо-видео • Туризм • AI Video',
+  type: 'video',
+  videoUrl: piterVideo,
+},
   {
     id: 2,
     title: '«Падающие перья и лунное сияние»',
@@ -91,11 +94,13 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
 
     // Preload full high-res images in background safely
     const images: HTMLImageElement[] = [];
-    GALLERY_SHOTS.forEach((shot) => {
-      const img = new window.Image();
-      img.src = shot.imageUrl;
-      images.push(img);
-    });
+   GALLERY_SHOTS.forEach((shot) => {
+  if (shot.type !== 'video' && shot.imageUrl) {
+    const img = new window.Image();
+    img.src = shot.imageUrl;
+    images.push(img);
+  }
+});
 
     return () => {
       document.body.style.overflow = originalOverflow;
@@ -157,21 +162,34 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
                 </div>
 
                 {/* Real Image Card Display */}
-                <div className="relative w-full h-64 rounded-xl overflow-hidden mb-3 border border-amber-500/20 bg-stone-950 flex items-center justify-center group-hover:border-amber-400/50 transition-all shadow-inner">
-                  <img
-                    src={shot.thumbUrl}
-                    alt={shot.title}
-                    loading="eager"
-                    decoding="async"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  
-                  {/* Hover Overlay Zoom */}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 backdrop-blur-[2px]">
-                    <ZoomIn className="w-6 h-6 text-amber-300" />
-                    <span className="text-xs font-medium text-amber-200">Открыть в полном размере</span>
-                  </div>
-                </div>
+               <div className="relative w-full h-64 rounded-xl overflow-hidden mb-3 border border-amber-500/20 bg-stone-950 flex items-center justify-center group-hover:border-amber-400/50 transition-all shadow-inner">
+  {shot.type === 'video' && shot.videoUrl ? (
+    <video
+      src={shot.videoUrl}
+      muted
+      loop
+      playsInline
+      autoPlay
+      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+  ) : (
+    <img
+      src={shot.thumbUrl}
+      alt={shot.title}
+      loading="eager"
+      decoding="async"
+      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+  )}
+
+  {/* Hover Overlay */}
+  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 backdrop-blur-[2px]">
+    <ZoomIn className="w-6 h-6 text-amber-300" />
+    <span className="text-xs font-medium text-amber-200">
+      Открыть в полном размере
+    </span>
+  </div>
+</div>
 
                 <h3 className="text-base font-semibold font-serif-book text-stone-100 flex items-center justify-between">
                   <span>{shot.title}</span>
@@ -211,25 +229,25 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
             </button>
 
             {/* Lightbox Header */}
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono mb-2">
-                {selectedShot.category}
-              </span>
-              <h3 className="text-xl font-bold font-serif text-amber-100">{selectedShot.title}</h3>
-              <p className="text-xs text-stone-400 font-serif italic mt-1">{selectedShot.author || 'Екатерина Савина'}</p>
-            </div>
-
-            {/* Lightbox Image View */}
-            <div className="w-full max-h-[60vh] rounded-xl overflow-hidden border border-stone-800 bg-black/60 flex items-center justify-center my-2 shadow-2xl">
-              <img
-                src={selectedShot.imageUrl}
-                alt={selectedShot.title}
-                loading="eager"
-                decoding="async"
-                className="max-w-full max-h-[60vh] object-contain rounded-lg"
-              />
-            </div>
-
+           <div className="w-full max-h-[60vh] rounded-xl overflow-hidden border border-stone-800 bg-black/60 flex items-center justify-center my-2 shadow-2xl">
+  {selectedShot.type === 'video' && selectedShot.videoUrl ? (
+    <video
+      src={selectedShot.videoUrl}
+      controls
+      autoPlay
+      playsInline
+      className="max-w-full max-h-[60vh] object-contain rounded-lg"
+    />
+  ) : (
+    <img
+      src={selectedShot.imageUrl}
+      alt={selectedShot.title}
+      loading="eager"
+      decoding="async"
+      className="max-w-full max-h-[60vh] object-contain rounded-lg"
+    />
+  )}
+</div>
             <p className="text-xs text-stone-300 font-sans-ui max-w-lg mt-3 leading-relaxed">{selectedShot.desc}</p>
           </div>
         </div>
