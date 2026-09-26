@@ -14,6 +14,7 @@ import denVospitatelyaPersonalImg from '../../assets/Portfolio/03_Assets/den-vos
 import denVospitatelyaPackagingImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-packaging.png';
 import resnicLogoPreviewImg from '../../assets/Portfolio/03_Assets/arhitektura-resnic-logo-preview.webp';
 import flyerPreviewImg from '../../assets/Portfolio/03_Assets/flyer-akciya-dzhinsy-preview.webp';
+import denVospitatelyaCoverImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-cover.png';
 
 interface CameraModalProps {
   onClose: () => void;
@@ -76,7 +77,7 @@ const GALLERY_SHOTS: ShotItem[] = [
   author: 'Екатерина Савина',
   color: 'from-rose-950/90 via-amber-950/70 to-stone-950',
   exif: 'Визуальный проект • Поздравление • Packaging Design',
-  thumbUrl: denVospitatelyaCoverImg,
+  thumbUrl: denVospitatelyaCoverPreviewImg,
   imageUrl: denVospitatelyaCoverImg,
   galleryImages: [
     denVospitatelyaCoverImg,
