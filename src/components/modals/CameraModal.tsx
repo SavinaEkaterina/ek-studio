@@ -14,7 +14,7 @@ import denVospitatelyaPersonalImg from '../../assets/Portfolio/03_Assets/den-vos
 import denVospitatelyaPackagingImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-packaging.png';
 import resnicLogoPreviewImg from '../../assets/Portfolio/03_Assets/arhitektura-resnic-logo-preview.webp';
 import flyerPreviewImg from '../../assets/Portfolio/03_Assets/flyer-akciya-dzhinsy-preview.webp';
-import denVospitatelyaCoverImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-cover.png';
+import denVospitatelyaCoverPreviewImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-cover-preview.webp';
 
 interface CameraModalProps {
   onClose: () => void;
