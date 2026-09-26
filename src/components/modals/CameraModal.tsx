@@ -249,7 +249,7 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
         key={index}
         src={image}
         alt={`${selectedShot.title} — изображение ${index + 1}`}
-        loading="eager"
+       loading="lazy"
         decoding="async"
         className="w-full max-h-[70vh] object-contain rounded-lg"
       />
