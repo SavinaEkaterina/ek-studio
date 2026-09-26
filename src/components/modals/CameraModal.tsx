@@ -78,7 +78,7 @@ const GALLERY_SHOTS: ShotItem[] = [
   color: 'from-rose-950/90 via-amber-950/70 to-stone-950',
   exif: 'Визуальный проект • Поздравление • Packaging Design',
   thumbUrl: denVospitatelyaCoverPreviewImg,
-  imageUrl: denVospitatelyaCoverImg,
+imageUrl: denVospitatelyaCoverImg,
   galleryImages: [
     denVospitatelyaCoverImg,
     denVospitatelyaPersonalImg,
