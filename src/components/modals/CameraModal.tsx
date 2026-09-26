@@ -13,6 +13,7 @@ import denVospitatelyaCoverImg from '../../assets/Portfolio/03_Assets/den-vospit
 import denVospitatelyaPersonalImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-personal.png';
 import denVospitatelyaPackagingImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-packaging.png';
 import resnicLogoPreviewImg from '../../assets/Portfolio/03_Assets/arhitektura-resnic-logo-preview.webp';
+import flyerPreviewImg from '../../assets/Portfolio/03_Assets/flyer-akciya-dzhinsy-preview.webp';
 
 interface CameraModalProps {
   onClose: () => void;
@@ -64,7 +65,7 @@ const GALLERY_SHOTS: ShotItem[] = [
   author: 'Екатерина Савина',
   color: 'from-blue-950/90 via-slate-900 to-stone-950',
   exif: 'Рекламный флаер • Digital Design',
-  thumbUrl: flyerImg,
+  thumbUrl: flyerPreviewImg,
   imageUrl: flyerImg,
 },
   {
