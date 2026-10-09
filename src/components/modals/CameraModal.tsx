@@ -169,9 +169,6 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
         {/* Content Grid */}
         <div className="flex-1 overflow-y-auto p-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
           {GALLERY_SHOTS.map((shot) => (
-            <div
-              key={shot.id}
-              
   <div
     key={shot.id}
     onClick={() => setSelectedShot(shot)}
