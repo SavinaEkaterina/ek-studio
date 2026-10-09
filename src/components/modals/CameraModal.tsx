@@ -145,7 +145,7 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
       aria-label="Галерея материалов"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/80 backdrop-blur-xl animate-fadeIn"
     >
-      <div className="relative w-full max-w-4xl h-full max-h-[88vh] bg-[#121215] border border-stone-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col text-stone-100">
+      <div className="relative w-full max-w-6xl h-full max-h-[92vh] bg-[#121215] border border-stone-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col text-stone-100"
         
         {/* Header */}
         <div className="p-5 sm:p-6 border-b border-stone-800 flex items-center justify-between bg-stone-950/60">
