@@ -100,6 +100,17 @@ imageUrl: denVospitatelyaCoverImg,
     type: 'link',
     linkUrl: `${import.meta.env.BASE_URL}my-vse-raznye.pdf`,
   },
+    {
+    id: 6,
+    title: '«День рождения Глаши»',
+    category: 'AI Video • Поздравительный мультфильм',
+    desc: 'Персональное видеопоздравление, созданное с помощью нейросетей. От разработки персонажей до анимации сцен — маленькая история, собранная в цельный мультфильм.',
+    author: 'Екатерина Савина',
+    color: 'from-rose-950/90 via-amber-950/70 to-stone-950',
+    exif: 'AI Video • Персональный мультфильм',
+    type: 'video',
+    videoUrl: `${import.meta.env.BASE_URL}glasha-birthday.mp4`,
+  },
 ];
 
 export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
