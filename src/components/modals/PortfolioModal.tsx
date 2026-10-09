@@ -69,6 +69,26 @@ const PROJECTS: Project[] = [
     imageBg: 'from-violet-950/80 via-indigo-950/70 to-stone-900',
     accentColor: '#8b5cf6',
   },
+    {
+    id: 'repetitor',
+    title: '«Английский с репетитором»',
+    category: 'Веб-дизайн • UX/UI • Образовательный сайт',
+    year: '2026',
+    description: 'Персональный сайт репетитора английского языка. Проект представляет услуги преподавателя, знакомит посетителей с форматом занятий и помогает сделать первый шаг к изучению английского языка. Структура и оформление направлены на то, чтобы информация была понятной и удобной для посетителей.',
+    role: 'Разработка концепции и структуры сайта, веб-дизайн, создание интерфейса и публикация проекта.',
+    tags: [
+      'Web Design',
+      'UX/UI Design',
+      'Education',
+      'English Tutor',
+      'Responsive Design'
+    ],
+    metrics: 'Образовательный сайт • Web Design',
+    client: 'Авторский проект',
+    linkUrl: 'https://savinaekaterina.github.io/repetitor/',
+    imageBg: 'from-blue-950/80 via-indigo-950/70 to-stone-900',
+    accentColor: '#60a5fa',
+  },
 ];
 
 export const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
