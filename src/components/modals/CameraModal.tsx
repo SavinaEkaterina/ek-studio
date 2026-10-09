@@ -169,12 +169,17 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
         {/* Content Grid */}
         <div className="flex-1 overflow-y-auto p-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
           {GALLERY_SHOTS.map((shot) => (
-  <div
-    key={shot.id}
-    onClick={() => setSelectedShot(shot)}
-    className={`group cursor-pointer p-5 rounded-2xl ...
-              className={`group cursor-pointer p-5 rounded-2xl bg-gradient-to-br ${shot.color} border border-stone-800 hover:border-amber-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between hover:scale-[1.01]`}
-            >
+     <div
+      key={shot.id}
+      onClick={() => {
+        if (shot.linkUrl) {
+          window.open(shot.linkUrl, '_blank', 'noopener,noreferrer');
+        } else {
+          setSelectedShot(shot);
+        }
+      }}
+      className={`group cursor-pointer p-5 rounded-2xl bg-gradient-to-br ${shot.color} border border-stone-800 hover:border-amber-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between hover:scale-[1.01]`}
+    >
               <div>
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/50 border border-white/10 text-[10px] text-amber-300 font-mono mb-3">
                   <Image className="w-3 h-3 text-amber-400" />
