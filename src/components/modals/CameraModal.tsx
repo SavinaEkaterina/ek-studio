@@ -171,7 +171,7 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
           {GALLERY_SHOTS.map((shot) => (
             <div
               key={shot.id}
-              {GALLERY_SHOTS.map((shot) => (
+              
   <div
     key={shot.id}
     onClick={() => setSelectedShot(shot)}
