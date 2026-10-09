@@ -31,7 +31,9 @@ interface ShotItem {
   thumbUrl?: string;
 imageUrl?: string;
     galleryImages?: string[];
-  type?: 'image' | 'video';
+   type?: 'image' | 'video' | 'link';
+  videoUrl?: string;
+  linkUrl?: string;
   videoUrl?: string;
 }
 
@@ -85,6 +87,19 @@ imageUrl: denVospitatelyaCoverImg,
     denVospitatelyaPackagingImg,
   ],
 },
+    {
+    id: 5,
+    title: '«Мы все разные»',
+    category: 'AI • Образовательная презентация',
+    desc: 'Руководство о том, как установить контакт с одноклассником с аутизмом. Через понятные технические метафоры презентация рассказывает об особенностях восприятия, сенсорной перегрузке и о том, как поддерживать дружеское общение.',
+    author: 'Екатерина Савина',
+    color: 'from-blue-950/90 via-indigo-950/80 to-stone-950',
+    exif: 'AI • NotebookLM • 8 страниц',
+    thumbUrl: `${import.meta.env.BASE_URL}my-vse-raznye-preview.png`,
+    imageUrl: `${import.meta.env.BASE_URL}my-vse-raznye-preview.png`,
+    type: 'link',
+    linkUrl: `${import.meta.env.BASE_URL}my-vse-raznye.pdf`,
+  },
 ];
 
 export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
@@ -156,7 +171,11 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
           {GALLERY_SHOTS.map((shot) => (
             <div
               key={shot.id}
-              onClick={() => setSelectedShot(shot)}
+              {GALLERY_SHOTS.map((shot) => (
+  <div
+    key={shot.id}
+    onClick={() => setSelectedShot(shot)}
+    className={`group cursor-pointer p-5 rounded-2xl ...
               className={`group cursor-pointer p-5 rounded-2xl bg-gradient-to-br ${shot.color} border border-stone-800 hover:border-amber-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between hover:scale-[1.01]`}
             >
               <div>
