@@ -15,6 +15,13 @@ import denVospitatelyaPackagingImg from '../../assets/Portfolio/03_Assets/den-vo
 import resnicLogoPreviewImg from '../../assets/Portfolio/03_Assets/arhitektura-resnic-logo-preview.webp';
 import flyerPreviewImg from '../../assets/Portfolio/03_Assets/flyer-akciya-dzhinsy-preview.webp';
 import denVospitatelyaCoverPreviewImg from '../../assets/Portfolio/03_Assets/den-vospitatelya-cover-preview.webp';
+import frudiaCreamImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-frudia-cream.webp';
+import premiumGraterImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-premium-grater.webp';
+import aromaDiffuserImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-aroma-diffuser.webp';
+import svaykaSteamCleanerImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-svayka-steam-cleaner.webp';
+import hocoHeadphonesImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-hoco-w35-air-headphones.webp';
+import xiaomiCoffeeMachineImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-xiaomi-mijia-n1-coffee-machine.webp';
+
 
 interface CameraModalProps {
   onClose: () => void;
