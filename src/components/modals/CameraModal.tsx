@@ -42,6 +42,7 @@ imageUrl?: string;
   videoUrl?: string;
   linkUrl?: string;
   videoUrl?: string;
+  externalUrl?: string;
 }
 
 const GALLERY_SHOTS: ShotItem[] = [
@@ -222,13 +223,13 @@ export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
           {GALLERY_SHOTS.map((shot) => (
      <div
       key={shot.id}
-      onClick={() => {
-        if (shot.linkUrl) {
-          window.open(shot.linkUrl, '_blank', 'noopener,noreferrer');
-        } else {
-          setSelectedShot(shot);
-        }
-      }}
+     onClick={() => {
+  if (shot.externalUrl) {
+    window.open(shot.externalUrl, '_blank', 'noopener,noreferrer');
+    return;
+  }
+  setSelectedShot(shot);
+}}
       className={`group cursor-pointer p-5 rounded-2xl bg-gradient-to-br ${shot.color} border border-stone-800 hover:border-amber-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between hover:scale-[1.01]`}
     >
               <div>
