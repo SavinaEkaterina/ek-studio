@@ -111,6 +111,26 @@ imageUrl: denVospitatelyaCoverImg,
     type: 'video',
     videoUrl: `${import.meta.env.BASE_URL}glasha-birthday.mp4`,
   },
+
+  {
+    id: 7,
+    title: '«Карточки для маркетплейсов»',
+    category: 'Graphic Design • Marketplace Design',
+    desc: 'Подборка карточек и инфографики для разных товаров: косметики, товаров для дома, кухонных принадлежностей и электроники. Каждая работа раскрывает преимущества продукта через композицию, типографику и визуальные акценты.',
+    author: 'Екатерина Савина',
+    color: 'from-violet-950/90 via-slate-900 to-stone-950',
+    exif: 'Marketplace Design • 6 работ',
+    thumbUrl: frudiaCreamImg,
+    imageUrl: frudiaCreamImg,
+    fit: 'contain',
+    galleryImages: [
+      frudiaCreamImg,
+      premiumGraterImg,
+      aromaDiffuserImg,
+      svaykaSteamCleanerImg,
+      hocoHeadphonesImg,
+      xiaomiCoffeeMachineImg,
+  },
 ];
 
 export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
