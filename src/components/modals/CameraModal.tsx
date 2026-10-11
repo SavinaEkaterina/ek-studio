@@ -21,7 +21,7 @@ import aromaDiffuserImg from '../../assets/Portfolio/03_Assets/Camera/marketplac
 import svaykaSteamCleanerImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-svayka-steam-cleaner.webp';
 import hocoHeadphonesImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-hoco-w35-air-headphones.webp';
 import xiaomiCoffeeMachineImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-xiaomi-mijia-n1-coffee-machine.webp';
-
+import memoryPhotoVideo from '../../assets/Portfolio/03_Assets/memory-photo-demo.mp4';
 
 interface CameraModalProps {
   onClose: () => void;
@@ -67,8 +67,21 @@ const GALLERY_SHOTS: ShotItem[] = [
   thumbUrl: resnicLogoPreviewImg,
   imageUrl: resnicLogoImg,
 },
- {
+
+  {
   id: 3,
+  title: '«Реставрация фотографий»',
+  category: 'Photo Restoration • AI Video',
+  desc: 'Сохраняем память. Возвращаем фотографиям жизнь.',
+  author: 'Екатерина Савина',
+  color: 'from-amber-950/90 via-stone-900 to-neutral-950',
+  exif: 'Реставрация фотографий • Хранители памяти',
+  type: 'video',
+  videoUrl: memoryPhotoVideo,
+  externalUrl: 'https://savinaekaterina.github.io/hranitelipamyati/',
+},
+ {
+  id: 4,
   title: '«Флаер для рекламной акции»',
   category: 'Graphic Design • Advertising',
   desc: 'Рекламный флаер для повторной акции магазина джинсовой одежды. Задача — сохранить визуальную концепцию первоначального промоматериала и адаптировать её для новой рекламной кампании с актуальными датами.',
@@ -79,7 +92,7 @@ const GALLERY_SHOTS: ShotItem[] = [
   imageUrl: flyerImg,
 },
   {
-  id: 4,
+  id: 5,
   title: '«Тёплое поздравление ко Дню дошкольного работника»',
   category: 'Graphic Design • Visual Project',
   desc: 'Комплексный визуальный проект ко Дню дошкольного работника: персонализированная поздравительная композиция, оформление внутреннего поздравления и упаковки. Задача — создать не просто открытку, а цельный эмоциональный подарок, в котором объединены иллюстрация, типографика, декоративные элементы и персональное обращение.',
@@ -95,7 +108,7 @@ imageUrl: denVospitatelyaCoverImg,
   ],
 },
     {
-    id: 5,
+    id: 6,
     title: '«Мы все разные»',
     category: 'AI • Образовательная презентация',
     desc: 'Руководство о том, как установить контакт с одноклассником с аутизмом. Через понятные технические метафоры презентация рассказывает об особенностях восприятия, сенсорной перегрузке и о том, как поддерживать дружеское общение.',
@@ -108,7 +121,7 @@ imageUrl: denVospitatelyaCoverImg,
     linkUrl: `${import.meta.env.BASE_URL}my-vse-raznye.pdf`,
   },
     {
-    id: 6,
+    id: 7,
     title: '«День рождения Глаши»',
     category: 'AI Video • Поздравительный мультфильм',
     desc: 'Персональное видеопоздравление, созданное с помощью нейросетей. От разработки персонажей до анимации сцен — маленькая история, собранная в цельный мультфильм.',
@@ -118,9 +131,8 @@ imageUrl: denVospitatelyaCoverImg,
     type: 'video',
     videoUrl: `${import.meta.env.BASE_URL}glasha-birthday.mp4`,
   },
-
   {
-    id: 7,
+    id: 8,
     title: '«Карточки для маркетплейсов»',
     category: 'Graphic Design • Marketplace Design',
     desc: 'Подборка карточек и инфографики для разных товаров: косметики, товаров для дома, кухонных принадлежностей и электроники. Каждая работа раскрывает преимущества продукта через композицию, типографику и визуальные акценты.',
