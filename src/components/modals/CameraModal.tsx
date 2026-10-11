@@ -21,7 +21,7 @@ import aromaDiffuserImg from '../../assets/Portfolio/03_Assets/Camera/marketplac
 import svaykaSteamCleanerImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-svayka-steam-cleaner.webp';
 import hocoHeadphonesImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-hoco-w35-air-headphones.webp';
 import xiaomiCoffeeMachineImg from '../../assets/Portfolio/03_Assets/Camera/marketplace-xiaomi-mijia-n1-coffee-machine.webp';
-import memoryPhotoVideo from '../../assets/Portfolio/03_Assets/memory-photo-demo.mp4';
+import memoryPhotoVideo from '../../assets/Portfolio/03_Assets/memory-photo-demo-web.mp4';
 
 interface CameraModalProps {
   onClose: () => void;
