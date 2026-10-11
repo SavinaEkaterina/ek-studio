@@ -123,14 +123,15 @@ imageUrl: denVospitatelyaCoverImg,
     thumbUrl: frudiaCreamImg,
     imageUrl: frudiaCreamImg,
     fit: 'contain',
-    galleryImages: [
-      frudiaCreamImg,
-      premiumGraterImg,
-      aromaDiffuserImg,
-      svaykaSteamCleanerImg,
-      hocoHeadphonesImg,
-      xiaomiCoffeeMachineImg,
-  },
+     galleryImages: [
+    frudiaCreamImg,
+    premiumGraterImg,
+    aromaDiffuserImg,
+    svaykaSteamCleanerImg,
+    hocoHeadphonesImg,
+    xiaomiCoffeeMachineImg,
+  ],
+},
 ];
 
 export const CameraModal: React.FC<CameraModalProps> = ({ onClose }) => {
